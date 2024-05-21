@@ -214,6 +214,46 @@ function randomizer() {
 
 
 
-document.getElementById('input').addEventListener('input', function(e) {
-    this.value =  this.value.replace(/[^0-9\.]/g, '');
+document.getElementById('input').addEventListener('input', function (e) {
+    this.value = this.value.replace(/[^0-9\.]/g, '');
 });
+
+
+
+
+
+
+let canZoomOut = true
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnZoom = document.getElementById('btn5')
+    let factor = 1
+
+    btnZoom.addEventListener('click', () => {
+        if (canZoomOut) {
+            if (factor > 0.3) {
+                factor *= 0.3
+            } else {
+                canZoomOut = false
+                btnZoom.disabled = true
+            }
+            let table = document.getElementById('container-table')
+            table.style.transform = `scale(${factor}) translate(-${(0.8 - factor) * 9 * col}px, -${(1.4 - factor) * 10 * rows }px)`
+        }
+    })
+})
+
+ 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnZoom = document.getElementById('btn6')
+
+
+    let factor = 1
+
+    btnZoom.addEventListener('click', () => {
+        factor *= 1
+        document.getElementById('container-table').style.transform = `scale(${factor})`
+    })
+})
+
