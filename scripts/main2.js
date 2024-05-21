@@ -5,31 +5,6 @@ let col
 let btnSubmit = document.getElementById('submit')
 
 
-function valueInp() {
-    let inp = +document.getElementById('input').value
-    rows = inp
-    col = inp
-    document.getElementById('input').value = ""
-
-    tableGeberation()
-
-    return inp
-}
-
-
-
-
-if (!rows) {
-    rows = 50
-}
-
-if (!col) {
-    col = 50
-}
-console.log('valueInp=', valueInp);
-
-
-
 
 const size = 10;
 const tableStyle = document.querySelectorAll("table td")
@@ -50,26 +25,27 @@ document.getElementById("btn3").addEventListener("click", () => {
 document.getElementById("btn4").addEventListener("click", () => {
     randomizer()
 })
-// document.getElementById("btn5").addEventListener("click", () => {
-
-//     tableStyle.forEach(el => {
-//         // el.classList.toggle("td")
-//         el.setAttribute("style", "background-color: red;")
 
 
-//     });
+//функция изменения величины поля
+function valueInp() {
+    let inp = +document.getElementById('input').value
+        rows = inp
+        col = inp
+        document.getElementById('input').value = ""
+   
+    tableGeberation()
 
-//     // tableStyle.classList.toggle("td")
-// })
+    return inp
+}
 
+if (!rows) {
+    rows = 50
+}
 
-// document.getElementById("btn5").addEventListener("click", () => {
-//     tableStyle.forEach(el => {
-//         tableStyle.classList.toggle("td")
-
-//     })
-// })
-
+if (!col) {
+    col = 50
+}
 
 
 setInterval(() => {
@@ -121,8 +97,8 @@ function tableGeberation() {
 
 function stateElements(x, y) {
     let cell = document.getElementById(`cell-${x + ',' + y}`)
-    if (cell.style.background != "green") {
-        cell.style.background = "green"
+    if (cell.style.background != "black") {
+        cell.style.background = "black"
     } else {
         cell.style.background = ""
     }
@@ -149,7 +125,7 @@ function firstGenerations() {
         firstGeneration.push([])
         for (let y = 0; y < col; y++) {
             let cell = document.getElementById(`cell-${x + ',' + y}`)
-            firstGeneration[x][y] = cell.style.background == "green"
+            firstGeneration[x][y] = cell.style.background == "black"
         }
     }
 }
@@ -190,7 +166,7 @@ function nextState() {
                 }
             } else {
                 if (alive == 3) {
-                    cell.style.background = "green"
+                    cell.style.background = "black"
                 }
             }
         }
@@ -214,12 +190,9 @@ function randomizer() {
 
 
 
-document.getElementById('input').addEventListener('input', function (e) {
+document.getElementById('input').addEventListener('input', function () {
     this.value = this.value.replace(/[^0-9\.]/g, '');
 });
-
-
-
 
 
 

@@ -7,28 +7,27 @@
 }
 
 td {
-    /* border: 1px solid black; */
+
     border-radius: 10px;
-    /* box-shadow: 0px 2px black; */
+
     background: rgb(255, 255, 255);
 
 }
 
 
 body {
-    background: #25fee140;
-    /* background: linear-gradient(90deg, rgba(14, 241, 22, 0.5) 0%, rgba(210, 218, 202, 0.5) 100%); */
+    background: #012029;
+    color: white;
 }
 
 .container {
     padding: 20px;
+ 
 
 }
 
 .info {
-    /* position: absolute;
-    left: 20px;
-    top: 10px; */
+
     max-width: 100%;
     width: 600px;
     font-size: 40px;
@@ -40,7 +39,7 @@ body {
 
 .btn {
     border: none;
-    background: skyblue;
+    background: rgb(255, 255, 255);
     padding: 10px;
     height: 30px;
     width: 100px;
@@ -53,8 +52,8 @@ body {
 
 .btn:hover,
 #submit:hover {
-    background: black;
-    color: white;
+    background: rgb(224, 251, 239);
+    color: black;
 }
 
 #container-table {
@@ -82,13 +81,13 @@ body {
     text-align: center;
 }
 #input:focus{
-    border: 1px solid black;
+    border: 1px solid rgb(224, 251, 239);
 }
 
 #submit{
     border: none;
     outline: none;
-    background: skyblue;
+    background: rgb(255, 255, 255);
     width: 70px;
     height: 30px;
     font-size: 25px;
