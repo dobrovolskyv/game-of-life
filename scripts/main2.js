@@ -57,10 +57,10 @@ function exchangePlayback() {
     play = !play
     if (play) {
 
-        btn1.innerHTML = " pause"
+        btn1.innerHTML = "Пауза"
     } else {
 
-        btn1.innerHTML = "play"
+        btn1.innerHTML = "Старт"
     }
 }
 
